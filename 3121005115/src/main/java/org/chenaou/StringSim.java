@@ -19,21 +19,9 @@ public class StringSim {
             tmp.append(str);
         }
 
-        String resu=tmp.toString();
-        int index=0;
+        String re=tmp.toString();
+        charCount(re,other,count);
 
-        for (int i = 0; i < other.length(); i++) {
-            for (int j = index; j < resu.length(); j++) {
-                if (other.charAt(i)==resu.charAt(j)){
-                    count.repet= count.repet+Count.w;
-                    Count.w=0.95;
-                    index=j+1;
-                    break;
-                }else {
-                    Count.w=0.05;
-                }
-            }
-        }
 
 
         if(count.repet - original / other.length()<0.3){
@@ -45,6 +33,21 @@ public class StringSim {
             }
             count.repet=original;
             count.all=all;
+        }
+    }
+    public static void charCount(String re,String other,Count count){
+        int index=0;
+        for (int i = 0; i < other.length(); i++) {
+            for (int j = index; j < re.length(); j++) {
+                if (other.charAt(i)==re.charAt(j)){
+                    count.repet= count.repet+Count.w;
+                    Count.w=0.95;
+                    index=j+1;
+                    break;
+                }else {
+                    Count.w=0.05;
+                }
+            }
         }
     }
 
