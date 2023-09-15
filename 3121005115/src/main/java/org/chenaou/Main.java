@@ -26,8 +26,9 @@ public class Main {
 
         Count count=new Count();//计数器
 
-        //打开文件
+        //读如文件
         FileReader file1,file2;
+        //输出文件
         File file3;
         try {
             file1=new FileReader(args[0]);
